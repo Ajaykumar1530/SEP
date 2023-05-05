@@ -13,12 +13,15 @@
             <br />
             </tr>
             <tr><td>
-   Enter StudentName:</td><td><input type="text" asp-for="StudentName" /></td>
+   Enter Your Name:</td><td><input type="text" asp-for="StudentName" /></td>
    </tr>
  <tr> <td> Enter Your Email:</td><td><input type="email" asp-for="StudentEmail" /></td></tr>
+ <tr> <td> Enter Qualification:</td><td><input type="text" asp-for="Qualification" /></td></tr>
+ <tr> <td> Enter YearOfPassOut:</td><td><input type="number" asp-for="YOP" /></td></tr>
+ <tr> <td> Test Date:</td><td><input type="date" asp-for="DateOfTest" /></td></tr>
  <tr> <td> Enter PhoneNo:</td><td><input type="number" asp-for="MobileNo" /></td></tr>
    <tr><td>Enter Password:</td><td><input type="password"asp-for="Password" /></td></tr>
-  <tr><td> Enter ConfirmPassword:</td><td><input type="password" asp-for="ConfirmPassword" /></td></tr>
+  <tr><td> Confirm Password:</td><td><input type="password" asp-for="ConfirmPassword" /></td></tr>
 <tr><td><button class="btn btn-primary" type="submit">SignUp</button></td></tr>
 <tr>
     <td></td>
@@ -36,6 +39,9 @@
     <script>
     document.getElementById("StudentName").value="";
 document.getElementById("StudentEmail").value = "";
+document.getElementById("Qualification").value = "";
+document.getElementById("YOP").value = "";
+document.getElementById("DateOfTest").value = "";
 document.getElementById("MobileNo").value = "";
 document.getElementById("Password").value = "";
 document.getElementById("ConfirmPassword").value = "";

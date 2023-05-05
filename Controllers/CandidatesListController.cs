@@ -14,6 +14,7 @@ namespace InterView.Controllers
         {
             return View();
         }
+        [HttpGet]
         public IActionResult GetAllCandidates()
         {
             var candidates = _StudentDbContext.CandidatesList.ToList();
@@ -85,19 +86,35 @@ namespace InterView.Controllers
 
             var ms = new MemoryStream(candidate.Image);
 
-            return File(candidate.Image, "image/jpeg",$"{ candidate.CandidateName}'s Img.jpg");
+            return File(candidate.Image, "image/jpeg", $"{ candidate.CandidateName}'s Img.jpg");
         }
-      /*  public IActionResult GetImage(int id)
+        /*  public IActionResult GetImage(int id)
+          {
+              var candidate = _StudentDbContext.CandidatesList.Find(id);
+              if (candidate != null && candidate.Image != null)
+              {
+                  return File(candidate.Image, "image/jpeg");
+              }
+              else
+              {
+                  return NotFound();
+              }
+          }*/
+        [HttpGet]
+        public IActionResult AdminLogin()
         {
-            var candidate = _StudentDbContext.CandidatesList.Find(id);
-            if (candidate != null && candidate.Image != null)
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AdminLogin(Admin admin)
+        {
+            var adm = _StudentDbContext.Admin.FirstOrDefault(a=>a.Email==admin.Email&&a.Password==admin.Password);
+            if (adm != null)
             {
-                return File(candidate.Image, "image/jpeg");
+                return RedirectToAction("GetAllCandidates","CandidatesList");
             }
-            else
-            {
-                return NotFound();
-            }
-        }*/
+            TempData["NotAdmin"] = "Invalid Admin Creadentials";
+            return View();
+        }
     }
 }

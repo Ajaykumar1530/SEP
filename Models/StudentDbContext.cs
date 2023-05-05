@@ -13,5 +13,6 @@ namespace InterView.Models
         public DbSet<Student> Students { get; set; }
         public DbSet<MCQsQuestions> MCQsQuestions { get; set; }
         public DbSet<CandidatesList> CandidatesList { get; set; }   
+        public DbSet<Admin> Admin { get; set; }   
     }
 }

@@ -1,0 +1,34 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Admin
+
+<form method="post">
+	<h3 style="text-align:center;color:#990033">Admin Login</h3>
+	<table align="center">
+		<tr>
+			<td>Enter Admin Email:</td>
+			<td>
+				<input type="email" asp-for="Email" />
+			</td>
+		</tr>
+		<tr>
+			<td>Enter Password:</td>
+			<td>
+				<input type="password" asp-for="Password" />
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<button class="btn btn-primary" type="submit">Login</button>
+			</td>
+		</tr>
+	</table>
+</form>
+@if (TempData["NotAdmin"] != null)
+{
+	<h5 style="color:red"> @TempData["NotAdmin"];</h5>
+}
