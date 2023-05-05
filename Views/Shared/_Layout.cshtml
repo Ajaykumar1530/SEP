@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>@ViewData["Title"]</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-wzRdH6xugb6Ad97U6d/j1FJjK7V79c0QAK1rV0rKjGazgyWf/2KZ+l4d4nG4s4geWbn9vA0NcNlSxtLLzSHhWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	 <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body >
+@*	<div class="container">
+    <h1 class="my-4">@ViewData["Title"]</h1>
+</div>*@
+<div class="container" align="center">
+	<img align="middle" src="~/Images/Antra-black.png" width="200" height="100">
+</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-info">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="@Url.Action("Index","Home")">Home</a>
+				</li>
+				
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Pre-SEP-Interview
+					</a>
+					<div style="background-color:#ff99ff" class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="@Url.Action("AddCandidate","CandidatesList")">Add-Candidate</a>
+												<a class="dropdown-item" href="@Url.Action("GetAllCandidates","CandidatesList")">View-Candidates</a>
+						<a class="dropdown-item" href="#">CommunicatingToCandidate</a>
+						
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						SEP-Interview
+					</a>
+					<div style="background-color:#ff99ff" class="dropdown-menu" aria-labelledby="navbarDropdown">
+					
+
+					<a class="dropdown-item" href="@Url.Action("StudentLogin","MCQs")">OnLineTest</a>
+					<!-- Inner DropDown-->
+						<!--<ul>
+						<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						OnLine-Test(MCQS)
+					</a>
+					<div class="Inner-dropdown-menu" aria-labelledby="navbarDropdown">
+						<ul>
+							<li><a class="dropdown-item" href="#">C#</a></li>
+							<li><a class="dropdown-item" href="#">Asp.Net</a></li>
+							<li><a class="dropdown-item" href="#">Ado.Net</a></li>
+							<li><a class="dropdown-item" href="#">SQL Server</a></li>
+					</div>
+				</li>
+				</ul>-->
+					<!--Inner Drop Complete-->
+					
+
+					<a class="dropdown-item" href="#">Written-Test</a>
+				<a class="dropdown-item" href="#">Face-To-Face Round</a>
+								<a class="dropdown-item" href="#">View-Results</a>
+
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						SEP-OnBoarding
+					</a>
+					<div style="background-color:#ff99ff" class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">SelectionList-SendingOfferLetters</a>
+						<a class="dropdown-item" href="#">Taking Documents</a>
+						<a class="dropdown-item" href="#">Agreement Bond</a>
+					</div>
+				</li>
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					SEP-Training
+					</a>
+					<div style="background-color:#ff99ff" class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Trainee Attendance</a>
+						<a class="dropdown-item" href="#">Assessments</a>
+						<a class="dropdown-item" href="#">Daily Tasks</a>
+						<a class="dropdown-item" href="#">Mails to Assessment Failures</a>
+					</div>
+				</li>
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Post-Training
+					</a>
+					<div style="background-color:#ff99ff" class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Resume Preparation</a>
+						<a class="dropdown-item" href="#">Mock Interviews & Results</a>
+						<a class="dropdown-item" href="#">Client Interview & Results</a>
+						<a class="dropdown-item" href="#">Bench Candidate List</a>
+					</div>
+				</li>
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						HR
+					</a>
+					<div style="background-color:#ff99ff" class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Taking Bond from Candiates</a>
+						<a class="dropdown-item" href="#">Client OnBoarded Candidate List</a>
+						<a class="dropdown-item" href="#">Client OffBoarded Candidate List</a>
+						<a class="dropdown-item" href="#">Issuing Certificates to Candidates</a>
+					</div>
+				</li><li class="nav-item">
+					<a class="nav-link" href="@Url.Action("About","Home")">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="@Url.Action("ContactUs","Home")">Contact Us</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		@RenderBody()
+	</div>
+
+	<footer class="border-top footer text-muted">
+		<!--<div class="container">
+			&copy; 2023 - My Website
+		</div>-->
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.dropdown').hover(function () {
+				$(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
+			}, function () {
+				$(this).find('.dropdown-menu').first().stop(true, true).slideUp(100)
+			});
+		});
+	</script>
+	</body>
+
+</html>

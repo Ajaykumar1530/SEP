@@ -1,0 +1,39 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+body {
+    background-color: #ccf2ff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.dropdown:hover .Inner-dropdown-menu {
+    display: block;
+}
+.my-4 {
+    text-align: center;
+    color:rosybrown
+}
+.timer {
+    font-size: 3em;
+    font-weight: bold;
+    color:red;
+}

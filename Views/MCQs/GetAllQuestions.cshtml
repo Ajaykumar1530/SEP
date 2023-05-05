@@ -1,0 +1,106 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<InterView.Models.MCQsQuestions>
+
+<form method="post" asp-action="GetAllQuestions">
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-vd+d7mdkRgH/0jzih1Zd9XeVQmSxdUx7DkIdy6Ud7oU4z4U1kVbZd+M9Ad7VK2SthLZD7Idu6Y4U6rk4z/Y4Jg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-eHri+JFwBRa8Wp/SMfz+3Nq5Ld/gXJWoe5+5SD1FW5PT1mYvA8mWmQPHCJFzlv0E2BMTKX+AYRcRucg0LEwmcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div class="container-fluid"style="position: fixed; top: 0; right: 0;">
+    <div class="row justify-content-end">
+        <div class="col-md-20">
+            <div class="float-right">
+
+                <h3 style="color:red">Timer</h3>
+<!--Attempted questions display-->
+                <p id="counter-display">Answered 0/@Model.Count() questions</p>
+                <!--Time left-->
+                <p class="lead">You have <span id="timer" class="badge badge-warning badge-danger"></span>min left</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--=======================================================-->
+    @{
+		var counter = 1;
+	}
+    @foreach (var question in Model)
+    {
+        <div>
+            <h4 style="color:#800040">@counter.@question.QuestionText</h4>
+            <div>
+                <div>
+                    <input type="radio" name="question@(question.Id)" value="1" class="option">
+                    @question.Option1
+                </div>
+                <div>
+                    <input type="radio" name="question@(question.Id)" value="2" class="option">
+                    @question.Option2
+                </div>
+                <div>
+                    <input type="radio" name="question@(question.Id)" value="3" class="option">
+                    @question.Option3
+                </div>
+                <div>
+                    <input type="radio" name="question@(question.Id)" value="4" class="option">
+                    @question.Option4
+                </div>
+                @* <li>
+                    <input type="radio" name="question@(question.Id)" value="4" class="option">
+                    @question.CorrectOption
+                </li>*@
+            </div>
+        </div>
+        	counter++;
+    }
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+
+<script>
+    // Select all radio buttons with class "option"
+    const options = document.querySelectorAll('.option');
+    // Listen for changes to the radio buttons
+    options.forEach(option => {
+        option.addEventListener('change', () => {
+            // Count the number of radio buttons that are checked
+            counter = document.querySelectorAll('.option:checked').length;
+
+            // Update the counter display
+            const counterDisplay = document.querySelector('#counter-display');
+            counterDisplay.textContent = `Answered ${counter}/@Model.Count() questions`;
+        });
+    });
+
+   //=========================Timer Script
+   function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          //  window.location.href = "/MCQs/Result"; // Redirect to home when timer ends
+            window.location.href = "/Home"; // Redirect to home when timer ends
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var duration = 60 * 1; // Set the exam duration in seconds (5 minutes in this case)
+    var display = document.querySelector('#timer');
+    startTimer(duration, display);
+};
+</script>
+
+

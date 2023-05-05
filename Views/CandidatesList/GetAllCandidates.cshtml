@@ -1,0 +1,75 @@
+﻿@model IEnumerable<InterView.Models.CandidatesList>
+<form class="container;align-content-left">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-vd+d7mdkRgH/0jzih1Zd9XeVQmSxdUx7DkIdy6Ud7oU4z4U1kVbZd+M9Ad7VK2SthLZD7Idu6Y4U6rk4z/Y4Jg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<h3 style="text-align:center;color:#800040">Candidates-List</h3>
+	<table class="table table-dark table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Qualification</th>
+				<th>Branch</th>
+				<th>YOP</th>
+				<th>CareerGap</th>
+				<th>Technology</th>
+				<th>Mobile</th>
+				<th>E-Mail</th>
+				<th>Resume</th>
+				<th>Image</th>
+				<th>DownLoad Image</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var Cand in Model)
+			{
+				<tr>
+					<td>@Cand.Id</td>
+					<td>@Cand.CandidateName</td>
+					<td>@Cand.Address</td>
+					<td>@Cand.HighestEducationQualification</td>
+					<td>@Cand.GraduationSpecialization</td>
+					<td>@Cand.YearOfGraduation</td>
+					<td>@Cand.CareerGap</td>
+					<td>@Cand.PreferredTechnology</td>
+					<td>@Cand.Mobile</td>
+					<td>@Cand.Email</td>
+					<td>
+						@*To Download Resume*@
+						@if (@Cand.Resume != null)
+						{
+							<a href="@Url.Action("DownloadResume", "CandidatesList", new { id = @Cand.Id })">Download Resume</a>
+						}
+						else
+						{
+							<span>No Resume</span>
+						}
+
+					</td>
+					<td>
+						@*To Display Resume*@
+						@if (@Cand.Image != null)
+						{
+							<img style="height:50px;width:50px" src="data:image;base64,@(Convert.ToBase64String(@Cand.Image))" />
+						}
+						else
+						{
+							<span>No Image</span>
+						}
+					</td>
+					<td>
+						@*To Download Image*@
+						@if (@Cand.Image != null)
+						{
+							<a href="@Url.Action("DownloadImage", "CandidatesList", new { id = @Cand.Id })">Download Image</a>
+						}
+						else
+						{
+							<span>No Image</span>
+						}
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</form>

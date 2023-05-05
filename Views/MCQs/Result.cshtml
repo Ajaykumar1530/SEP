@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<InterView.Models.MCQsQuestions>
+@{
+    ViewData["Title"] = "Result";
+}
+<form method="post" asp-action="Result">
+
+<h1 style="color:#800040">Test Result</h1>
+
+<p>Your score is: <strong><h2>@TempData["Score"]</h2></strong></p>
+
+@*<a asp-action="StudentLogin" class="btn btn-success">Submit</a>*@
+<button class="btn btn-primary " type="submit">Submit</button>
+</form>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<InterView.Models.MCQsQuestions>
+
+
+ <form method="post">
+    @foreach (var question in Model)
+    {
+        <h4>@question.QuestionText</h4>
+        <ul>
+            <li><input type="radio" name="@question.Id" value="1" /> @question.Option1</li>
+            <li><input type="radio" name="@question.Id" value="2" /> @question.Option2</li>
+            <li><input type="radio" name="@question.Id" value="3" /> @question.Option3</li>
+            <li><input type="radio" name="@question.Id" value="4" /> @question.Option4</li>
+        </ul>
+    }
+
+</form>
+<input type="submit" value="Submit" />
+
+<script>
+  document.querySelector('form').addEventListener('submit', function(event) {
+    var numSelected = document.querySelectorAll('input[type="radio"]:checked').length;
+    alert("You selected " + numSelected + " answers");
+  });
+</script>
+
+
+
+
+

@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model InterView.Models.MCQsQuestions
+<form method="get" asp-action="GetAllQuestions" >
+        <p>
+            <h3 style="color:darkred">Instructions:</h3>
+            <ol type="1">
+<li>Read the questions and options carefully before selecting your answer. Make sure you understand what is being asked before selecting an option.</li>
+<li>There is only one correct answer for each question. Choose the answer that you think is the best or most appropriate for the question being asked.</li>
+<li>Each question carries equal weight. Try to answer as many questions as you can in the given time</li>
+<li>There is no negative marking for incorrect answers. So, if you are unsure of an answer, it's better to make an educated guess rather than leaving it blank</li>
+<li>You will have a limited amount of time to complete the test. Use your time wisely and try to answer all questions within the allotted time</li>
+<li>If you encounter technical issues during the test, notify the instructor or test administrator immediately.</li>
+<li>Do not discuss the questions or answers with other participants during or after the test. This is to maintain the integrity of the test and ensure that all participants have an equal opportunity to succeed.</li>
+<li>Once you have completed the test, submit your answers and wait for the results to be announced.</li>
+</ol>
+<h5>I hope these instructions will be helpful to you and your test-takers. Good luck with your test!</h5>
+        </p>
+            <div class="text-center">
+<button class="btn btn-primary btn-lg btn-rounded" type="submit">StartTest</button>
+</div>
+</form>

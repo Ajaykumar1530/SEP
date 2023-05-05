@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Student
+<form method="post">
+    <h3 style="text-align:center;color:#990033">Candidate Login</h3>
+    <table align="center">
+        <tr>
+           <br />
+        </tr>
+        <tr>
+            <td>Enter Your Email:</td>
+            <td>
+                <input type="email" asp-for="StudentEmail" />
+            </td>
+        </tr><tr>
+              <td>Enter Your Password:</td>
+            <td>
+                <input type="password" asp-for="Password" />
+            </td>
+        </tr><tr>
+            <td>
+                <button class="btn btn-primary" type="submit">Login</button>
+            </td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td><a style="color:brown" asp-action="SignupStudent" asp-controller="MCQs">New Registration?</a></td>
+        </tr>
+
+    </table>
+</form>
+@if( TempData["loginfailed"]!=null){
+   <h5 style="color:red"> @TempData["loginfailed"];</h5> 
+}
+    
