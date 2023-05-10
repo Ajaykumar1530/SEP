@@ -49,7 +49,8 @@ namespace InterView.Controllers
                     candidate.Image = fileBytes;
                 }
             }
-
+            int currYr = DateTime.Now.Year;
+            candidate.CareerGap =currYr - candidate.YearOfGraduation;
             _StudentDbContext.CandidatesList.Add(candidate);
             await _StudentDbContext.SaveChangesAsync();
 
@@ -116,5 +117,6 @@ namespace InterView.Controllers
             TempData["NotAdmin"] = "Invalid Admin Creadentials";
             return View();
         }
+       
     }
 }

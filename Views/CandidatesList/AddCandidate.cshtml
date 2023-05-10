@@ -21,12 +21,31 @@
    Enter CandidateName:</td><td><input type="text" asp-for="CandidateName" /></td>
    </tr>
  <tr> <td>Address:</td><td><input type="text" asp-for="Address" /></td></tr>
- <tr> <td>EducationQualification:</td><td><input type="text" asp-for="HighestEducationQualification" /></td></tr>
-   <tr><td>Branch:</td><td><input type="text"asp-for="GraduationSpecialization" /></td></tr>
+@* <tr> <td>EducationQualification:</td><td><input type="text" asp-for="HighestEducationQualification" /></td></tr>
+*@
+<tr><td>Select Qualification</td>
+    <td><select asp-for="HighestEducationQualification" required>
+    <option value="">-Select-</option>
+    <option value="Btech">Btech</option>
+    <option value="Degree">Degree</option>
+    <option value="Others">Others</option>
+</select>
+</td></tr>
+<tr><td>Branch:</td><td><input type="text"asp-for="GraduationSpecialization" /></td></tr>
   <tr><td> YearOfPassOut:</td><td><input type="text" asp-for="YearOfGraduation" /></td></tr>
-    <tr><td> CareerGap:</td><td><input type="text" asp-for="CareerGap" /></td></tr>
-      <tr><td> Technology:</td><td><input type="text" asp-for="PreferredTechnology" /></td></tr>
-        <tr><td> Mobile:</td><td><input type="number" asp-for="Mobile" /></td></tr>
+      <tr><td> Technology:</td>
+      <td>
+          <select asp-for="PreferredTechnology" required>
+              <option value="">-Select-</option>
+              <option value="DOTNET">DOTNET</option>
+              <option value="JAVA">JAVA</option>
+              <option value="SALESFORCE">SALESFORCE</option>
+              <option value="DEVOPS">DEVOPS</option>
+
+          </select>
+      </td>    
+      </tr>
+        <tr><td> Mobile:</td><td><input type="text" pattern="[0-9]{10}" asp-for="Mobile" /></td></tr>
           <tr><td> E-Mail:</td><td><input type="email" asp-for="Email" /></td></tr>
                 <tr><td>Upload Resume:</td><td><input type="file" class="form-control-file" id="resume" name="Resume"> </td></tr>
                   <tr><td>Upload Image:</td><td>   <input asp-for="Image" type="file" class="form-control-file" /></td></tr>
@@ -43,7 +62,6 @@ document.getElementById("Address").value = "";
 document.getElementById("HighestEducationQualification").value = "";
 document.getElementById("GraduationSpecialization").value = "";
 document.getElementById("YearOfGraduation").value = "";
-document.getElementById("CareerGap").value = "";
 document.getElementById("PreferredTechnology").value = "";
 document.getElementById("Mobile").value = "";
 document.getElementById("Email").value = "";

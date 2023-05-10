@@ -47,9 +47,17 @@ namespace InterView.Controllers
                         score++;
                     }
                 }
-                TempData["Score"] = score;
+               
             }
-            TempData.Keep("Score");
+            var id = TempData["id"];
+            var stid = _dbContext.Students.Find(id);
+          
+            stid.Score = score;
+            if (stid != null)
+            {
+                _dbContext.Students.Update(stid);
+                _dbContext.SaveChanges();
+            }
             return View("Result");
         }
         [HttpGet]
@@ -66,20 +74,7 @@ namespace InterView.Controllers
         [HttpPost]
         public IActionResult Result(Student student)
         {
-            var id = TempData["id"];
-            var stid = _dbContext.Students.Find(id);
-            int score = 0;
-            if (TempData.ContainsKey("Score") && TempData["Score"] != null)
-            {
-                score = (int)TempData["Score"];
-            }
-            stid.Score = score;
-            if (stid != null)
-            {
-                _dbContext.Students.Update(stid);
-                _dbContext.SaveChanges();
-            }
-            return View("StudentLogin");
+            return RedirectToAction("Index","Home");
         }
 
         [HttpGet]
@@ -122,6 +117,11 @@ namespace InterView.Controllers
                 TempData["loginfailed"] = "Invalid Credentials";
                 return View();
             }
+        }
+        public IActionResult GetAllStudents()
+        {
+            var students=_dbContext.Students.ToList();
+            return View(students);
         }
     }
 

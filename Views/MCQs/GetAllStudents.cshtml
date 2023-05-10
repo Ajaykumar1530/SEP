@@ -1,0 +1,43 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<InterView.Models.Student>
+<form class="container;align-content-left">
+	<h3 style="text-align:center;color:#800040">Candidates-Result</h3>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>S.No</th>
+				<th>CandidateName</th>
+				<th>CandidateEmail</th>
+				<th>MobileNo</th>
+				<th>Score</th>
+			</tr>
+		</thead>
+		<tbody>
+			@{
+				var counter = 1;
+			}
+			@foreach (var Cand in Model)
+			{
+				<tr>
+					<td>@counter</td>
+					<td>@Cand.StudentName</td>
+					<td>@Cand.StudentEmail</td>
+					<td>@Cand.MobileNo</td>
+					@if (@Cand.Score != null)
+					{
+						<td>@Cand.Score</td>
+					}
+					else
+					{
+						<td>0</td>
+					}
+				</tr>
+				counter++;
+			}
+		</tbody>
+	</table>
+</form>

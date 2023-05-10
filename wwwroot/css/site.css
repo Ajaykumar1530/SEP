@@ -37,3 +37,7 @@ body {
     font-weight: bold;
     color:red;
 }
+
+.nav-link{
+    text-decoration-color:white;
+} 
