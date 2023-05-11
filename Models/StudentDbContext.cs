@@ -14,5 +14,8 @@ namespace InterView.Models
         public DbSet<MCQsQuestions> MCQsQuestions { get; set; }
         public DbSet<CandidatesList> CandidatesList { get; set; }   
         public DbSet<Admin> Admin { get; set; }   
+        public DbSet<JavaMcqs> JavaMcqs { get; set; }   
+        public DbSet<DevopsMcqs> DevopsMcqs { get; set; }   
+        public DbSet<SalesForceMcqs> SalesForceMcqs { get; set; }   
     }
 }

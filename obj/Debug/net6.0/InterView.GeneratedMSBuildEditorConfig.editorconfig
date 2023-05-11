@@ -47,20 +47,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/GetAllQuestions.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xHZXRBbGxRdWVzdGlvbnMuY3NodG1s
+[F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/DevopsQuestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xEZXZvcHNRdWVzdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/GetAllStudents.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xHZXRBbGxTdHVkZW50cy5jc2h0bWw=
+[F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/GetAllQuestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xHZXRBbGxRdWVzdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/Result.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xSZXN1bHQuY3NodG1s
+[F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/JavaQuestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xKYXZhUXVlc3Rpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/SalesForceQuestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xTYWxlc0ZvcmNlUXVlc3Rpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/SignupStudent.cshtml]
@@ -73,6 +81,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/StudentLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xTdHVkZW50TG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/MCQs/ViewAllResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRc1xWaWV3QWxsUmVzdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Ajay/Antra Inc/Angular/FullStackApp/FullStackAPI/InterView/Views/Shared/Error.cshtml]
